@@ -1,0 +1,177 @@
+<input (keydown)="onKeydown($event)" />
+
+
+<!-- <---colspan------ -->
+
+<table style="width:100%">
+    <tr>
+        <th colspan="2">Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>43</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>57</td>
+    </tr>
+</table>
+<br>
+<br>
+
+
+<!-- ----------rowspan------- -->
+
+<table style="width:100%">
+    <tr>
+        <th>Name</th>
+        <td>Jill</td>
+    </tr>
+    <tr>
+        <th rowspan="2">Phone</th>
+        <td>555-1234</td>
+    </tr>
+    <tr>
+        <td>555-8745</td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+
+
+<br>
+<br>
+<!-- using json  colspan -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th>SL</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let row of data">
+            <tr>
+                <td (click)="row.isExpand = !row.isExpand">
+                    <i *ngIf="!row.isExpand" class="bi-chevron-right"></i>
+                    <i *ngIf="row.isExpand" class="bi-chevron-up"></i>
+                </td>
+                <td>{{ row.id }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.email }}</td>
+            </tr>
+            <tr *ngIf="row.isExpand">
+                <td colspan="4">
+                    <table class="table table-sm">
+                        <thead>
+                            <th>Address1</th>
+                            <th>Address2</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row2 of row.address">
+                                <td>{{ row2.add1 }}</td>
+                                <td>{{ row2.add2 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+
+<!-- using json  rowspan -->
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td colspan="4" class="text-center">
+                Document Audit Trail
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="3">Certificate Number</th>
+            <th>Document Version</th>
+            <th>Issued on</th>
+            <th>Cancelled on</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataitem; let index = index;">
+            <td *ngIf="index === 0" [attr.rowspan]="data.length" style="vertical-align:middle;">AZ12Q289</td>
+            <td>{{item.versionNo}}</td>
+            <td>{{item.issuedOn}}</td>
+        </tr>
+    </tbody>
+</table>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td colspan="4" class="text-center">
+                Document Audit Trail
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="3">Certificate Number</th>
+            <th>Document Version</th>
+            <th>Issued on</th>
+            <th>Cancelled on</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td rowspan="3" style="vertical-align:middle;">AZ12Q289</td>
+            <td>Version 1</td>
+            <td>19/5/2021 09:28</td>
+            <td>22/5/2021 15:28</td>
+        </tr>
+        <tr>
+
+            <td>Version 2</td>
+            <td>22/5/2021 15:30</td>
+            <td>28/5/2021 19:12</td>
+
+        </tr>
+        <tr>
+
+            <td>Version 3</td>
+            <td>22/5/2021 15:30</td>
+            <td>-</td>
+
+        </tr>
+
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<table class="custom-table">
+    <!-- Header Row -->
+    <thead>
+        <tr>
+            <th *ngFor="let column of displayedColumns" (click)="headerEvent(column)">
+                {{ column }}
+            </th>
+        </tr>
+    </thead>
+
+    <!-- Data Rows -->
+    <tbody>
+        <tr *ngFor="let row of tableData">
+            <td *ngFor="let column of displayedColumns" [attr.colspan]="column === 'position' ? row.colspan : null"
+                [hidden]="column === 'name' && row.colspan">
+                {{ row[column] }}
+            </td>
+        </tr>
+    </tbody>
+</table>
