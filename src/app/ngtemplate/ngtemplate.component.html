@@ -1,0 +1,43 @@
+<div class="card-primary mb-3">
+    <div class="cardheader header_split">
+        <button type="button" class="btn btn-primary" aria-label="Add Feedback" 
+                (click)="addFeedback(addfeedbackForm, feedbackfooter)">
+            Add Feedback
+        </button>
+
+        <button type="button" class="btn btn-primary" aria-label="Edit Feedback" 
+                (click)="edit(feedbackEditBody, feedbackEditFooter)">
+            Edit Feedback
+        </button>
+
+        <button type="button" class="btn btn-primary" aria-label="View History" 
+                (click)="Clickhistory(feedbackHistoryBody, feedbackHistoryFooter)">
+            View History
+        </button>
+    </div>
+</div>
+
+<div *ngIf="show" class=" ">
+    <ng-container *ngTemplateOutlet="EditModalBodyTemplate"></ng-container>
+    <ng-container *ngTemplateOutlet="EditModalFooterTemplate"></ng-container>
+</div>
+
+<!-- Templates -->
+<ng-template #addfeedbackForm>
+    Add feedback form content
+</ng-template>
+<ng-template #feedbackfooter>
+    Footer for Add Feedback
+</ng-template>
+<ng-template #feedbackHistoryBody>
+    History body content
+</ng-template>
+<ng-template #feedbackHistoryFooter>
+    Footer for History
+</ng-template>
+<ng-template #feedbackEditBody>
+    Edit body content
+</ng-template>
+<ng-template #feedbackEditFooter>
+    Footer for Edit
+</ng-template>
