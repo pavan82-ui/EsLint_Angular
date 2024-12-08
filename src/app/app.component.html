@@ -3,3 +3,40 @@
 <!-- <app-class-binding></app-class-binding> -->
 
 <app-ngtemplate></app-ngtemplate>
+
+<app-ngcontainer></app-ngcontainer>
+
+<br>
+<br>
+
+<app-ngcontent>
+    <div>
+        {{parenttochild}}
+    </div>
+</app-ngcontent>
+
+
+<app-ngcontent>
+    <div>
+        ng-content-2
+    </div>
+</app-ngcontent>
+<br>
+<br>
+<!-- 
+<app-tablist *ngFor="let tab of arr" [tab]="tab">
+</app-tablist> -->
+
+<br>
+<br>
+
+<app-tablist>
+    <div class="header">
+        Angular ng-content Select by Class
+        Example
+    </div>
+    <div>
+        test content
+    </div>
+
+</app-tablist>

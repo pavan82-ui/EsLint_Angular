@@ -1,27 +1,15 @@
-# EsLint
+<!-- 07-12-24 -->
+<!-- ng-container -->
+<!-- It won't render in dom, eg:if i loop ngfor and render data using some checking condition .using this can can restrict unwanted rendering html elements in dom  -->
+<!-- We should use only one structural directive in tag, we cannot use ngfor and ngIf simultaneously -->
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+<!-- ng-container -->
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+      <!-- ng-template  -->
+<!-- If we write something under ng-template it won't render in dom,becoz angular wont consider this as tag.This won't work until we attach any structral directive like ngfor,ngswitch,ngif eg:if else , switch cases  -->
+       <!-- ng-template -->
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+       <!-- ng-content -->
+<!-- is used to pass data from parent to child or we can pass html from parent to child -->
+       <!-- ng-content -->

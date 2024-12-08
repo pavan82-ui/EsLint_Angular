@@ -1,0 +1,18 @@
+<ng-container *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+
+    <div>
+        {{item}}
+    </div>
+
+</ng-container>
+
+<br>
+
+
+<div *ngIf="login else temp">
+    logged in
+</div>
+
+<ng-template #temp>
+    logged out
+</ng-template>
