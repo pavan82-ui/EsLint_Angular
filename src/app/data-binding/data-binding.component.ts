@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-binding.component.scss']
 })
 export class DataBindingComponent implements OnInit {
-  items: any = [{colspan:1,name:'item 1'}, {colspan:3,name:'item 2'}];
+  items: any = [{ colspan: 1, name: 'item 1' }, { colspan: 3, name: 'item 2' }];
   displayedColumns: any[] = ['position', 'name', 'weight', 'symbol'];
-  tableData:any[] = [
+  tableData: any[] = [
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', colspan: null },
     { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', colspan: null },
     { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', colspan: 2 },
@@ -74,12 +74,12 @@ export class DataBindingComponent implements OnInit {
     {
       versionNo: '1',
       issuedOn: '07/Jul/2021 11:15',
-      
+
     },
     {
       versionNo: '2',
       issuedOn: '07/Jul/2021 11:15',
-     
+
     }
   ];
 
@@ -94,6 +94,6 @@ export class DataBindingComponent implements OnInit {
       // Add your logic here
     }
   }
-  
+
 
 }

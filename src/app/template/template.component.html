@@ -1,0 +1,27 @@
+<ng-template #theTruth>
+    <h4>hello world</h4>
+    <h4>hello world</h4>
+    <h4>hello world</h4>
+    <h4>hello world</h4>
+</ng-template>
+
+<app-parent [title]="theTruth"></app-parent>
+
+
+<!-- … -->
+<ng-container *ngTemplateOutlet="tmpl; context: {$implicit: 'Hello'}">
+</ng-container>
+<!-- … -->
+<ng-container *ngTemplateOutlet="tmpl; context: {$implicit: 'World'}">
+</ng-container>
+<!-- … -->
+<ng-template #tmpl let-text>
+    <h1>{{ text }}</h1>
+</ng-template>
+
+
+<ng-template let-message="myMessage" #myTemplateRef>
+    {{message}}
+</ng-template>
+<div *ngTemplateOutlet="myTemplateRef; context:{myMessage: 'This is a partial template'}">
+</div>
